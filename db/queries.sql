@@ -1,0 +1,1 @@
+SELECT name, title, salary, first_name, last_name, manager_id FROM ((department INNER JOIN workrole ON department.id = workrole.department_id) INNER JOIN employee ON workrole.department_id = employee.workrole_id);
