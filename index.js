@@ -8,9 +8,12 @@
 // add an employee --> prompt enter employee info + update db
 // select employee to update new role
 
+require('dotenv').config();
+
 const inquirer = require('inquirer')
 const mysql = require('mysql2');
 const cTable = require('console.table');
+
 
 // Connect to database
 const db = mysql.createConnection(
@@ -19,7 +22,7 @@ const db = mysql.createConnection(
       // MySQL username,
       user: 'root',
       // MySQL password
-      password: 'fuckleagueoflegends1',
+      password: process.env.DB_PASSWORD, 
       database: 'sqlHomework_db'
     },
     console.log(`Connected to the homework database.`)
